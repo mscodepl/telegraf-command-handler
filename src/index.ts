@@ -2,7 +2,7 @@ import { Composer, Context, MiddlewareFn } from "telegraf";
 import fs, { Stats } from "fs";
 import path from "node:path";
 import { Update } from "telegraf/typings/core/types/typegram";
-import color from "colorette";
+import { cyan, bold, red } from "colorette"
 
 interface Options {
   path: string;
@@ -29,7 +29,7 @@ class TelegrafCommandHandler {
     this.walk(this.path, (x) => {
       let cmdObj = require(x);
       this.commands.set(cmdObj.name, cmdObj);
-      console.log(color.greenBright(`[Command Handler] Loaded -> ${cmdObj.name}`));
+      console.log(cyan(bold('[Command Handler]')) + cyan(` Loaded -> ${cmdObj.name}`));
     });
   }
 
@@ -55,7 +55,7 @@ class TelegrafCommandHandler {
       try {
         await commandData.execute(ctx, args);
       } catch (error) {
-        console.error(color.red(`Error executing ${command}`));
+        console.error(red(`Error executing ${command}`));
         console.error(error);
         if(this.errorHandling) this.errorHandling(ctx, error);
       }

@@ -1,15 +1,15 @@
-# Telegraf Command Handler
+# Telegraf Command Handler Upgraded
 
 A command handler for [Telegraf](https://npmjs.com/telegraf), which is similar to the command handler for Discord.js and such. The goal is that all commands are not in 1 file... But divided into several different files.
 
 ## Installation
 
 ```bash
-npm i telegraf-command-handler
+npm i telegraf-command-handler-upgraded
 # or
-yarn add telegraf-command-handler
+yarn add telegraf-command-handler-upgraded
 # or
-pnpm add telegraf-command-handler
+pnpm add telegraf-command-handler-upgraded
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ pnpm add telegraf-command-handler
 ```js
 /* main file */
 const { Telegraf } = require('telegraf');
-const { TelegrafCommandHandler } = require('telegraf-command-handler');
+const { TelegrafCommandHandler } = require('telegraf-command-handler-upgraded');
 const path = require('path');
 
 const bot = new Telegraf('Your bot token');
